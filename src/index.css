@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Responsive & standar industri: no horizontal scroll, smooth scroll, min font size (hindari zoom iOS) */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-size: 16px;
+}
+
+/* Safe area untuk notch / home indicator (iPhone X+) */
+@supports (padding: max(0px)) {
+  .safe-area-inset-top {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+  .safe-area-inset-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
