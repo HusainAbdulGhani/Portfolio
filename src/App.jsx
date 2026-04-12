@@ -265,10 +265,44 @@ function App() {
                     <img src={p.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={p.title} loading="lazy" />
                   </div>
                   <div className="p-5 sm:p-6 md:p-8">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{p.title}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {p.tech.map(t => <span key={t} className="text-[10px] font-mono border border-emerald-500/30 text-emerald-400 px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-tighter">{t}</span>)}
-                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">{p.title}</h3>
+                    {p.subtitle && (
+                      <p className="text-emerald-500/90 text-xs font-mono tracking-wide mb-2">{p.subtitle}</p>
+                    )}
+                    {p.description && (
+                      <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-4 text-left">{p.description}</p>
+                    )}
+                    {p.techStack ? (
+                      <div className="space-y-4 mb-4 text-left">
+                        {Object.entries(p.techStack).map(([category, items]) => (
+                          <div key={category}>
+                            <h4 className="text-emerald-500 text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] mb-2">{category}</h4>
+                            <ul className="space-y-1.5">
+                              {items.map((item) => (
+                                <li key={item} className="text-slate-400 text-xs sm:text-sm leading-snug flex gap-2">
+                                  <span className="text-emerald-500/80 shrink-0 mt-1">•</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {p.tech.map(t => <span key={t} className="text-[10px] font-mono border border-emerald-500/30 text-emerald-400 px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-tighter">{t}</span>)}
+                      </div>
+                    )}
+                    {p.link && (
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="min-h-[44px] inline-flex items-center text-emerald-500 text-xs font-bold tracking-widest hover:text-emerald-400 transition-colors uppercase"
+                      >
+                        Lihat Project →
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -282,14 +316,18 @@ function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {data.certificates.map((c, i) => (
               <div key={i} className="group bg-slate-900/40 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all overflow-hidden">
-                <a href={c.img} target="_blank" rel="noreferrer" className="block aspect-[3/4] overflow-hidden bg-slate-900/60 min-h-[44px]">
-                  <img src={c.img} alt={c.title} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                </a>
+                <div className="aspect-[3/4] min-h-[220px] bg-slate-900/80 border-b border-white/5 overflow-hidden">
+                  <object data={c.file} type="application/pdf" title={c.title} className="w-full h-full min-h-[220px] pointer-events-none">
+                    <div className="flex h-full min-h-[220px] flex-col items-center justify-center gap-2 p-4 text-slate-500 text-sm">
+                      <span>Pratinjau PDF tidak tersedia di browser ini.</span>
+                    </div>
+                  </object>
+                </div>
                 <div className="p-4 sm:p-5">
                   <h3 className="font-bold text-base sm:text-lg mb-1">{c.title}</h3>
                   <p className="text-slate-500 text-xs sm:text-sm mb-1">{c.issuer}</p>
                   {c.year && <p className="text-slate-600 text-xs font-mono mb-3 sm:mb-4">{c.year}</p>}
-                  <a href={c.img} target="_blank" rel="noreferrer" className="min-h-[44px] inline-flex items-center text-emerald-500 text-xs font-bold tracking-widest hover:text-emerald-400 transition-colors uppercase py-2">Lihat Sertifikat →</a>
+                  <a href={c.file} target="_blank" rel="noopener noreferrer" className="min-h-[44px] inline-flex items-center text-emerald-500 text-xs font-bold tracking-widest hover:text-emerald-400 transition-colors uppercase py-2">Lihat Sertifikat →</a>
                 </div>
               </div>
             ))}
