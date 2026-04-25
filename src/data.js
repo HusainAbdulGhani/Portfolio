@@ -2,8 +2,8 @@
 import profileImg from './assets/2.jpg';
 import project1 from './assets/Expense & Budget Visualizer.png';
 import project2 from './assets/E-Commerce ShopKu.png';
-import project3 from './assets/explore indonesia.jpg';
-import project4 from './assets/Blog Website.webp';
+import project3 from './assets/explore indonesia.png'
+import project4 from './assets/prediksi harga rumah.png';
 import partnerNdgLinuxUnhatched from './assets/Partner-_NDG_Linux_Unhatched_certificate.pdf';
 import partnerNdgLinuxEssentials from './assets/Partner-_NDG_Linux_Essentials_certificate.pdf';
 import certBuildAiBatch from './assets/Build_Your_First_AI_Apps_Batch_Certificate.pdf';
@@ -134,8 +134,59 @@ export const projects = [
       Tools: ["Lucide React (icons)", "GitHub (version control)"],
     },
   },
-  { title: "Explore Indonesia", img: project3, tech: ["React", "Tailwind"] },
-  { title: "Blog Website", img: project4, tech: ["HTML", "CSS", "JS"] },
+  {
+    title: "Explore Indonesia",
+    img: project3,
+    link: "https://explore-indonesia-jet.vercel.app/",
+    techStack: {
+      "Frontend (UI)": [
+        "Next.js 14 (App Router) (`src/app/*`)",
+        "React 18 + TypeScript",
+        "Tailwind CSS (+ `tailwindcss-animate`)",
+        "Lucide-React (ikon)",
+        "Framer Motion (animasi)",
+        "React Hook Form + Zod (form + validasi)",
+        "@tanstack/react-query (fetching/cache state)",
+        "react-hot-toast (toast notification)",
+        "next/image (optimasi gambar + shimmer)",
+      ],
+      "Backend (di dalam Next.js)": [
+        "Next.js API Routes (`src/app/api/*`)",
+        "NextAuth v4 (Credentials login)",
+        "Zod validasi request payload (server)",
+      ],
+      "Database / Data Layer": [
+        "PostgreSQL (Supabase Postgres) via connection string di `.env.local`",
+        "Prisma ORM (+ adapter pg pooling)",
+        "Supabase Storage (upload gambar via endpoint `/api/admin/upload`)",
+        "Supabase Admin client / service role untuk tabel bookings & approval queue (schema: `supabase/schema.sql`)",
+      ],
+      "Deployment target": [
+        "Vercel (Next.js frontend + API)",
+        "Supabase (DB + Storage)",
+      ],
+    },
+  },
+  {
+    title: "Prediksi Harga Rumah",
+    img: project4,
+    link: "https://jakarta-house-prediction.streamlit.app/",
+    techStack: {
+      "Stack / Tech": [
+        "Python",
+        "Streamlit (frontend web app + UI)",
+        "scikit-learn==1.6.1 (model ML: regresi & klasifikasi)",
+        "pandas (bikin & rapihin DataFrame fitur)",
+        "numpy (dependency ML/array; tidak wajib dipakai langsung di app)",
+        "pickle (load model `.pkl`)",
+        "TOML (`.streamlit/config.toml` buat theme)",
+      ],
+      "Presentasi stack": [
+        "Streamlit + scikit-learn + pandas (Python)",
+        "Model disimpan sebagai pickle (`.pkl`)",
+      ],
+    },
+  },
 ];
 
 // Sertifikat — semua file PDF di src/assets 
