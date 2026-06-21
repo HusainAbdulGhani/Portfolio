@@ -7,8 +7,19 @@ import project4 from './assets/prediksi harga rumah.png';
 import partnerNdgLinuxUnhatched from './assets/Partner-_NDG_Linux_Unhatched_certificate.pdf';
 import partnerNdgLinuxEssentials from './assets/Partner-_NDG_Linux_Essentials_certificate.pdf';
 import certBuildAiBatch from './assets/Build_Your_First_AI_Apps_Batch_Certificate.pdf';
+import Data_Analytics from './assets/Data_Analytics.pdf';
+import dataAnalyticsPreview from './assets/Data_Analytics.png';
+import sertifikat_AI from './assets/sertifikat_AI.pdf';
+import sertifikatAiPreview from './assets/sertifikat_AI.jpg';
+import Excel_2019_Associate from './assets/Excel_2019_Associate.pdf';
+import excelPreview from './assets/Excel_2019_Associate.png';
 import certRevou from './assets/CCSE.pdf';
 import cvFile from './assets/Husain_Abdul_Ghani.pdf';
+import Prime_Property from './assets/Prime_Property.png';
+import partnerNdgLinuxEssentialsPreview from './assets/Partner-_NDG_Linux_Essentials_certificate.png';
+import partnerNdgLinuxUnhatchedPreview from './assets/Partner-_NDG_Linux_Unhatched_certificate.png';
+import certBuildAiBatchPreview from './assets/Build_ai_app.png';
+import certRevouPreview from './assets/CCES.png';
 
 export const assets = { profileImg, cvFile };
 
@@ -17,16 +28,16 @@ export const navLinks = ["Home", "About", "Skills", "Experience", "Projects", "C
 // Data Pribadi & Summary — sesuai Husain_Abdul_Ghani.pdf
 export const personalInfo = {
   name: "Husain Abdul Ghani",
-  role: "Frontend / Fullstack Developer",
-  location: "Bandung Barat, Indonesia",
+  role: "Web Developer",
+  location: "Bandung,Jawa Barat, Indonesia",
   locationTagline: "Open to Remote Worldwide",
-  email: "Pasatba@gmail.com",
+  email: "HusainAbdulGhani1@gmail.com",
   phone: "+6282119300188",
   linkedin: "Husain Abdul Ghani",
-  linkedinUrl: "https://www.linkedin.com/in/husain-abdul-ghani-7677243bb/",
+  linkedinUrl: "www.linkedin.com/in/husain-abdul-ghani-7677243bb",
   github: "HusainAbdulGhani",
   githubUrl: "https://github.com/HusainAbdulGhani",
-  summary: "Results-driven Frontend Developer with a strong foundation in building responsive, interactive, and high-performance user interfaces. Experienced in modern web development, including seamless frontend-backend integration and database management (SQL & NoSQL). Passionate about optimizing user experience and scalable web architectures using the Laravel and JavaScript ecosystems."
+  summary: "Results-driven Web Developer with a strong foundation in building responsive, interactive, and high-performance user interfaces. Experienced in modern web development, including seamless frontend-backend integration and database management (SQL & NoSQL). Passionate about optimizing user experience and scalable web architectures using the Laravel and JavaScript ecosystems."
 };
 
 // Data Pendidikan — sesuai PDF (Politeknik TEDC Bandung)
@@ -187,12 +198,39 @@ export const projects = [
       ],
     },
   },
+  {
+    title: "Prime Property",
+    img: Prime_Property,
+    link: "https://prime-property-frontend-three.vercel.app/",
+    techStack: {
+      "Frontend": [
+        "Next.js 14 (App Router) (`src/app/*`)",
+      ],
+      "Backend": [
+        "Laravel 11 + PHP 8.2",
+        "Laravel Sanctum (autentikasi token)",
+        "PostgreSQL via Supabase (database)",
+        "PHPUnit (testing)",
+      ],
+      "Database / Data Layer": [
+        "PostgreSQL (Supabase Postgres) via connection string di `.env.local`",
+      ],
+      "Deployment target": [
+        "Vercel (Next.js frontend)",
+        "Railway (backend Laravel)",
+        "Supabase (DB + Storage)",
+      ],
+    },
+  }
 ];
 
 // Sertifikat — semua file PDF di src/assets 
 export const certificates = [
-  { title: "Partner NDG Linux Essentials", issuer: "Linux Indonesia", year: "2024", file: partnerNdgLinuxEssentials },
-  { title: "Partner NDG Linux Unhatched", issuer: "Linux Indonesia", year: "2024", file: partnerNdgLinuxUnhatched },
-  { title: "Build Your First AI Apps", issuer: "Build Your First AI Apps", year: "2025", file: certBuildAiBatch },
-  { title: "Into Software Engineering", issuer: "Revou", year: "2026", file: certRevou },
+  { title: "Partner NDG Linux Essentials", issuer: "Linux Indonesia", year: "2024", file: partnerNdgLinuxEssentials, preview: partnerNdgLinuxEssentialsPreview },
+  { title: "Partner NDG Linux Unhatched", issuer: "Linux Indonesia", year: "2024", file: partnerNdgLinuxUnhatched, preview: partnerNdgLinuxUnhatchedPreview },
+  { title: "Build Your First AI Apps", issuer: "Build Your First AI Apps", year: "2025", file: certBuildAiBatch, preview: certBuildAiBatchPreview },
+  { title: "Into Software Engineering", issuer: "Revou", year: "2026", file: certRevou, preview: certRevouPreview },
+  { title: "Data Analytics", issuer: "Certiport", year: "2026", file: Data_Analytics, preview: dataAnalyticsPreview },
+  { title: "AI For Digital Marketing", issuer: "Asosiasi Digital Marketing Indonesia", year: "2024", file: sertifikat_AI, preview: sertifikatAiPreview },
+  { title: "Excel 2019 Associate", issuer: "Microsoft", year: "2026", file: Excel_2019_Associate, preview: excelPreview },
 ];

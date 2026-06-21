@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Stars, OrbitControls } from '@react-three/drei';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Planet } from './components/Planet';
+import { CertificatePreview } from './components/CertificatePreview';
 import * as data from './data';
 
 const INTRO_DURATION_MS = 2200;
@@ -65,7 +66,7 @@ function App() {
       {/* NAVBAR — responsive: hamburger + overlay nav di mobile (standar industri) */}
       <header className="fixed top-0 left-0 right-0 z-[100] bg-[#0a0e14]/90 backdrop-blur-md border-b border-white/5 px-4 sm:px-6 md:px-16 py-3 sm:py-4 flex justify-between items-center safe-area-inset-top">
         <a href="#home" className="text-lg sm:text-xl font-bold text-emerald-500 tracking-tighter truncate max-w-[180px] sm:max-w-none">
-          HUSAIN ABDUL GHANI PORTFOLIO.
+          HUSAIN ABDUL GHANI.
         </a>
         <nav className="hidden md:flex gap-6 lg:gap-8">
           {data.navLinks.map(link => (
@@ -317,11 +318,7 @@ function App() {
             {data.certificates.map((c, i) => (
               <div key={i} className="group bg-slate-900/40 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all overflow-hidden">
                 <div className="aspect-[3/4] min-h-[220px] bg-slate-900/80 border-b border-white/5 overflow-hidden">
-                  <object data={c.file} type="application/pdf" title={c.title} className="w-full h-full min-h-[220px] pointer-events-none">
-                    <div className="flex h-full min-h-[220px] flex-col items-center justify-center gap-2 p-4 text-slate-500 text-sm">
-                      <span>Pratinjau PDF tidak tersedia di browser ini.</span>
-                    </div>
-                  </object>
+                  <CertificatePreview file={c.file} preview={c.preview} title={c.title} />
                 </div>
                 <div className="p-4 sm:p-5">
                   <h3 className="font-bold text-base sm:text-lg mb-1">{c.title}</h3>
