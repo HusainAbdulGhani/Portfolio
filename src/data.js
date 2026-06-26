@@ -21,6 +21,14 @@ import partnerNdgLinuxUnhatchedPreview from './assets/Partner-_NDG_Linux_Unhatch
 import certBuildAiBatchPreview from './assets/Build_ai_app.png';
 import certRevouPreview from './assets/CCES.png';
 
+// Import Sertifikat Baru yang ditambahkan
+import webDevelopmentCert from './assets/web-development.pdf';
+import webDevelopmentPreview from './assets/web-development.png';
+import angularDeveloperCert from './assets/angular-developer.pdf';
+import angularDeveloperPreview from './assets/angular-developer.png';
+import codingFoundationsCert from './assets/coding-foundations.pdf';
+import codingFoundationsPreview from './assets/coding-foundations.png';
+
 export const assets = { profileImg, cvFile };
 
 export const navLinks = ["Home", "About", "Skills", "Experience", "Projects", "Certificate", "Contact"];
@@ -233,4 +241,9 @@ export const certificates = [
   { title: "Data Analytics", issuer: "Certiport", year: "2026", file: Data_Analytics, preview: dataAnalyticsPreview },
   { title: "AI For Digital Marketing", issuer: "Asosiasi Digital Marketing Indonesia", year: "2024", file: sertifikat_AI, preview: sertifikatAiPreview },
   { title: "Excel 2019 Associate", issuer: "Microsoft", year: "2026", file: Excel_2019_Associate, preview: excelPreview },
+  
+  // Sertifikat baru yang ditambahkan
+  { title: "Web Development", issuer: "Sololearn", year: "2026", file: webDevelopmentCert, preview: webDevelopmentPreview },
+  { title: "Angular Developer", issuer: "Sololearn", year: "2026", file: angularDeveloperCert, preview: angularDeveloperPreview },
+  { title: "Coding Foundations", issuer: "Sololearn", year: "2026", file: codingFoundationsCert, preview: codingFoundationsPreview }
 ];
